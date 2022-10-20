@@ -1,0 +1,43 @@
+.ao-badge {
+  display: flex;
+  width: fit-content;
+  text-align: center;
+  border-radius: var(--ao-border-radius-8);
+  background-color: var(--ao-badge-bg, var(--ao-color-gray-600));
+  padding: 0 var(--ao-spacing-8);
+  border: none;
+
+  &__text {
+    max-width: 29px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--ao-font-family-monospace);
+    font-size: var(--ao-font-size-small);
+    font-weight: var(--ao-font-weight-medium);
+    line-height: 16px;
+    color: var(--ao-color-blue-75);
+  }
+
+  &--selected {
+    --ao-badge-bg: var(--ao-color-appomni-blue);
+  }
+
+  &--blue-600 {
+    --ao-badge-bg: var(--ao-color-blue-600);
+  }
+
+  &--blue-500 {
+    --ao-badge-bg: var(--ao-color-blue-500);
+  }
+
+  &:hover,
+  &:focus {
+    --ao-badge-bg: var(--ao-color-blue-700);
+  }
+
+  &:hover,
+  &:focus .ao-badge--selected {
+    --ao-badge-bg: var(--ao-color-appomni-blue);
+  }
+}

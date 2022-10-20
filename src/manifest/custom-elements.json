@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./components/badge\""
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/_common/ariaproperty.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "ariaProperty",
+          "parameters": [
+            {
+              "name": "prototype",
+              "type": {
+                "text": "E"
+              }
+            },
+            {
+              "name": "property",
+              "type": {
+                "text": "K"
+              }
+            }
+          ],
+          "description": "A property decorator that helps proxy an aria attribute to an internal node.\n\nThis decorator is only intended for use with ARIAMixin properties,\nsuch as `ariaLabel`, to help with screen readers.\n\nThis decorator will remove the host `aria-*` attribute at runtime and add it\nto a `data-aria-*` attribute to avoid screenreader conflicts between the\nhost and internal node.\n\n`@ariaProperty` decorated properties should sync with LitElement to the\n`data-aria-*` attribute, not the native `aria-*` attribute."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ariaProperty",
+          "declaration": {
+            "name": "ariaProperty",
+            "module": "src/components/_common/ariaproperty.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/_common/slot.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "HasSlotController validates if the slot has content.\nIt listens for slot name changes, re-renders the component and assigns the style to the corresponding element.\nThe function shall be used if the element in question has various slots with different content.",
+          "name": "HasSlotController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "host",
+              "type": {
+                "text": "ReactiveControllerHost & Element"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "slotNames",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "slotNames"
+            },
+            {
+              "kind": "method",
+              "name": "hasDefaultSlot",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hasNamedSlot",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "test",
+              "parameters": [
+                {
+                  "name": "slotName",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HasSlotController",
+          "declaration": {
+            "name": "HasSlotController",
+            "module": "src/components/_common/slot.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/_common/utils.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "setAttributes",
+          "parameters": [
+            {
+              "name": "el"
+            },
+            {
+              "name": "attributes"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "setAttributes",
+          "declaration": {
+            "name": "setAttributes",
+            "module": "src/components/_common/utils.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/badge/badge.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Appomni Badge",
+          "name": "AoBadge",
+          "members": [
+            {
+              "kind": "field",
+              "name": "selected",
+              "description": "Badge's attribute selected",
+              "type": {
+                "text": "Boolean | undefined"
+              },
+              "attribute": "selected",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "color",
+              "type": {
+                "text": "String | undefined"
+              },
+              "description": "Badge's color (optional)",
+              "attribute": "color",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabel",
+              "type": {
+                "text": "String"
+              },
+              "description": "Aria-label text for the badge.",
+              "attribute": "data-aria-label"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "selected",
+              "description": "Badge's attribute selected",
+              "type": {
+                "text": "Boolean | undefined"
+              },
+              "fieldName": "selected",
+              "attribute": "selected"
+            },
+            {
+              "name": "color",
+              "type": {
+                "text": "String | undefined"
+              },
+              "description": "Badge's color (optional)",
+              "fieldName": "color",
+              "attribute": "color"
+            },
+            {
+              "name": "Populates",
+              "type": {
+                "text": "String"
+              },
+              "description": "the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen.",
+              "fieldName": "ariaLabel"
+            },
+            {
+              "name": "data-aria-label",
+              "type": {
+                "text": "String"
+              },
+              "description": "Aria-label text for the badge.",
+              "attribute": "Populates",
+              "fieldName": "ariaLabel"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "ao-badge",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AoBadge",
+          "declaration": {
+            "name": "AoBadge",
+            "module": "src/components/badge/badge.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ao-badge",
+          "declaration": {
+            "name": "AoBadge",
+            "module": "src/components/badge/badge.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/badge/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./badge\""
+          }
+        }
+      ]
+    }
+  ]
+}
