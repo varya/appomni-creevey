@@ -6,7 +6,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    "@storybook/addon-measure"
+    "@storybook/addon-measure",
+    "creevey"
   ],
   framework: "@storybook/web-components",
   core: { builder: "@storybook/builder-vite" },
